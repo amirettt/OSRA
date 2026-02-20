@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
-import logo from "@/assets/logo.png";
 
 const paths = [
   {
@@ -83,7 +82,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <div className="w-11 h-11 rounded-2xl bg-emerald-400/10 border border-emerald-400/60 overflow-hidden flex items-center justify-center">
               <Image
-                src={logo}
+                  src="/logo.png"
                 alt="Family Platform Logo"
                 width={44}
                 height={44}

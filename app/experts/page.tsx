@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import logo from "../../assets/logo.png"; // لوغو المنصّة
 
 type Expert = {
   id: string;
@@ -231,7 +230,7 @@ export default function ExpertsPage() {
           <div className="flex items-center gap-2">
             <div className="w-9 h-9 rounded-2xl bg-emerald-400/10 border border-emerald-400/60 overflow-hidden flex items-center justify-center">
               <Image
-                src={logo}
+                  src="/logo.png"
                 alt="Family Platform Logo"
                 width={36}
                 height={36}
