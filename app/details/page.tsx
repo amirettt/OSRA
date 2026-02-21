@@ -1,8 +1,13 @@
 "use client";
+
 export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+export const revalidate = 0;
+
 import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
+
 
 type Option = { id: string; labelAr: string; labelEn: string };
 
