@@ -1,7 +1,7 @@
 "use client";
 
+import { Suspense, useMemo, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
 
 const pathLabels = {
   solh: {
@@ -38,7 +38,10 @@ const detailLabels = {
   planning: { ar: "تخطيط مالي وأسري", en: "Financial & family planning" },
   training: { ar: "جلسات تأهيل وتدريب", en: "Preparation & training sessions" },
   lawyer: { ar: "تنسيق مع محامين", en: "Coordination with lawyers" },
-  arrangements: { ar: "ترتيب الحضانة والنفقة", en: "Custody & alimony arrangements" },
+  arrangements: {
+    ar: "ترتيب الحضانة والنفقة",
+    en: "Custody & alimony arrangements",
+  },
 } as const;
 
 const expertLabels = {
@@ -80,7 +83,7 @@ type FormState = {
   note: string;
 };
 
-export default function SummaryPage() {
+function SummaryPageInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -101,10 +104,8 @@ export default function SummaryPage() {
 
   const pathLabel =
     pathLabels[path as keyof typeof pathLabels] ?? pathLabels.solh;
-  const detailLabel =
-    detailLabels[detail as keyof typeof detailLabels];
-  const expertLabel =
-    expertLabels[expert as keyof typeof expertLabels];
+  const detailLabel = detailLabels[detail as keyof typeof detailLabels];
+  const expertLabel = expertLabels[expert as keyof typeof expertLabels];
 
   const isValid = useMemo(() => {
     return (
@@ -122,7 +123,6 @@ export default function SummaryPage() {
     e.preventDefault();
     if (!isValid) return;
 
-    // مستقبلًا: إرسال إلى API أو بريد
     console.log("Booking request:", {
       lang,
       path,
@@ -300,9 +300,7 @@ export default function SummaryPage() {
 
             <div>
               <label className="block text-sm mb-1">
-                {lang === "ar"
-                  ? "المدينة / البلد *"
-                  : "City / country *"}
+                {lang === "ar" ? "المدينة / البلد *" : "City / country *"}
               </label>
               <input
                 type="text"
@@ -322,9 +320,7 @@ export default function SummaryPage() {
 
             <div>
               <label className="block text-sm mb-1">
-                {lang === "ar"
-                  ? "ملاحظة إضافية"
-                  : "Additional note"}
+                {lang === "ar" ? "ملاحظة إضافية" : "Additional note"}
               </label>
               <textarea
                 value={form.note}
@@ -361,5 +357,13 @@ export default function SummaryPage() {
         </section>
       </div>
     </main>
+  );
+}
+
+export default function SummaryPage() {
+  return (
+    <Suspense fallback={null}>
+      <SummaryPageInner />
+    </Suspense>
   );
 }
