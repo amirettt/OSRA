@@ -4,9 +4,7 @@ export const dynamic = "force-dynamic";
 
 import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
-
-
+import { useMemo, useState } from "react"
 type Option = { id: string; labelAr: string; labelEn: string };
 
 const pathMeta = {
@@ -90,7 +88,7 @@ const questions: Record<
   },
 };
 
-export default function DetailsPage() {
+  function DetailsPageIneer() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const path = searchParams.get("path") || "solh";
@@ -125,7 +123,7 @@ export default function DetailsPage() {
           <div className="flex items-center gap-2">
             <div className="w-9 h-9 rounded-2xl bg-emerald-400/10 border border-emerald-400/60 overflow-hidden flex items-center justify-center">
               <Image
-                  src="/logo.png"
+                src="/logo.png"                
                 alt="Family Platform Logo"
                 width={36}
                 height={36}
