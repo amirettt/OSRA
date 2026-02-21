@@ -7,7 +7,6 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 
 
-
 type Option = { id: string; labelAr: string; labelEn: string };
 
 const pathMeta = {
