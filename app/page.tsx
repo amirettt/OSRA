@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 
 const paths = [
@@ -11,7 +10,8 @@ const paths = [
     subtitleAr: "للمقبلين على الزواج",
     subtitleEn: "For couples before marriage",
     descriptionAr: "تخطيط وقائي للحياة المشتركة، مالياً ونفسياً وأسرياً.",
-    descriptionEn: "Preventive planning for shared life: financial, emotional, and family.",
+    descriptionEn:
+      "Preventive planning for shared life: financial, emotional, and family.",
     color: "from-emerald-400/90 to-emerald-600/90",
   },
   {
@@ -20,8 +20,10 @@ const paths = [
     labelEn: "Reconciliation",
     subtitleAr: "نزاعات أسرية أو ميراث",
     subtitleEn: "Family or inheritance disputes",
-    descriptionAr: "مرافقة لحل الخلافات الأسرية والميراث بالطرق الودية والقانونية.",
-    descriptionEn: "Support to resolve family and inheritance disputes amicably and legally.",
+    descriptionAr:
+      "مرافقة لحل الخلافات الأسرية والميراث بالطرق الودية والقانونية.",
+    descriptionEn:
+      "Support to resolve family and inheritance disputes amicably and legally.",
     color: "from-sky-400/90 to-sky-600/90",
   },
   {
@@ -30,8 +32,10 @@ const paths = [
     labelEn: "Agreement",
     subtitleAr: "ما بعد الطلاق",
     subtitleEn: "Post‑divorce arrangements",
-    descriptionAr: "تنظيم الانفصال، الحضانة، والنفقة مع خبراء ومحامين مختصين.",
-    descriptionEn: "Organizing separation, custody, and alimony with specialized experts.",
+    descriptionAr:
+      "تنظيم الانفصال، الحضانة، والنفقة مع خبراء ومحامين مختصين.",
+    descriptionEn:
+      "Organizing separation, custody, and alimony with specialized experts.",
     color: "from-amber-400/90 to-amber-600/90",
   },
   {
@@ -40,8 +44,10 @@ const paths = [
     labelEn: "Child safety",
     subtitleAr: "مرافقة الطفل",
     subtitleEn: "Child support",
-    descriptionAr: "دعم نفسي وسلوكي للأطفال في الظروف الأسرية الحساسة.",
-    descriptionEn: "Psychological and behavioral support for children in sensitive situations.",
+    descriptionAr:
+      "دعم نفسي وسلوكي للأطفال في الظروف الأسرية الحساسة.",
+    descriptionEn:
+      "Psychological and behavioral support for children in sensitive situations.",
     color: "from-fuchsia-400/90 to-fuchsia-600/90",
   },
   {
@@ -50,8 +56,10 @@ const paths = [
     labelEn: "Abroad",
     subtitleAr: "الجالية بالخارج",
     subtitleEn: "Algerian diaspora",
-    descriptionAr: "حلول قانونية وأسرية للجالية الجزائرية عبر الحدود.",
-    descriptionEn: "Legal and family solutions for Algerians living abroad.",
+    descriptionAr:
+      "حلول قانونية وأسرية للجالية الجزائرية عبر الحدود.",
+    descriptionEn:
+      "Legal and family solutions for Algerians living abroad.",
     color: "from-cyan-400/90 to-cyan-600/90",
   },
 ];
@@ -80,32 +88,25 @@ export default function Home() {
       <header className="border-b border-white/10 bg-slate-950/80 backdrop-blur sticky top-0 z-20">
         <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
           <div className="flex items-center gap-2">
-            <div className="w-11 h-11 rounded-2xl bg-emerald-400/10 border border-emerald-400/60 overflow-hidden flex items-center justify-center">
-              <Image
-                  src="/logo.png"
-                alt="Family Platform Logo"
-                width={44}
-                height={44}
-                className="object-contain"
-              />
-            </div>
             <div className="text-right">
-              <p className="text-base md:text-lg font-semibold leading-snug">
-                {lang === "ar" ? "منصّة أسرة" : "Family Platform"}
+              <p className="text-sm font-semibold">
+                {lang === "ar" ? "أسرة" : "Usra"}
               </p>
               <p className="text-xs md:text-sm text-slate-300">
                 {lang === "ar"
-                  ? "مرافقة قانونية ونفسية بأسلوب عصري"
-                  : "Modern legal & psychological family support"}
+                  ? "منصّة للمرافقة القانونية الأسرية"
+                  : "Family legal support platform"}
               </p>
             </div>
           </div>
-          <button
-            onClick={toggleLang}
-            className="text-xs px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-          >
-            {lang === "ar" ? "English" : "العربية"}
-          </button>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={toggleLang}
+              className="px-3 py-1.5 rounded-xl border border-white/20 text-[11px] hover:bg-white/5"
+            >
+              {lang === "ar" ? "English" : "العربية"}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -227,7 +228,9 @@ export default function Home() {
         <div className="grid gap-5 md:grid-cols-[1.2fr_1fr] items-start">
           <div className="rounded-3xl bg-slate-900/60 border border-slate-800 px-5 py-4 text-right">
             <h3 className="text-base md:text-lg font-semibold mb-3">
-              {lang === "ar" ? "كيف تعمل المنصّة؟" : "How does the platform work?"}
+              {lang === "ar"
+                ? "كيف تعمل المنصّة؟"
+                : "How does the platform work?"}
             </h3>
             <ol className="space-y-2.5 text-sm text-slate-200">
               <li>
@@ -250,7 +253,9 @@ export default function Home() {
 
           <div className="rounded-3xl bg-emerald-500/5 border border-emerald-500/30 px-5 py-4 text-right space-y-3">
             <h3 className="text-base md:text-lg font-semibold mb-2">
-              {lang === "ar" ? "التواصل وحجز الجلسات" : "Contact & session booking"}
+              {lang === "ar"
+                ? "التواصل وحجز الجلسات"
+                : "Contact & session booking"}
             </h3>
             <p className="text-xs md:text-sm text-slate-200">
               {lang === "ar"
@@ -259,18 +264,18 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-3 justify-end">
               <a
-                href="https://wa.me/21366663463"
+                href="https://wa.me/213666663463"
                 target="_blank"
-                className="px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 text-xs md:text-sm font-semibold
-                           transition-transform transition-colors duration-200 hover:bg-emerald-400 hover:-translate-y-0.5"
+                className="px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 text-xs md:text-sm font-semibold transition-transform transition-colors duration-200 hover:bg-emerald-400 hover:-translate-y-0.5"
               >
-                {lang === "ar" ? "احجز الجلسة عبر واتساب" : "Book a session on WhatsApp"}
+                {lang === "ar"
+                  ? "احجز الجلسة عبر واتساب"
+                  : "Book a session on WhatsApp"}
               </a>
               <a
-                href="https://wa.me/21366663463"
+                href="https://wa.me/213666663463"
                 target="_blank"
-                className="px-4 py-2 rounded-xl border border-emerald-400/60 text-emerald-200 text-xs md:text-sm
-                           hover:bg-emerald-400/10 transition-colors"
+                className="px-4 py-2 rounded-xl border border-emerald-400/60 text-emerald-200 text-xs md:text-sm hover:bg-emerald-400/10 transition-colors"
               >
                 {lang === "ar" ? "تواصل معنا" : "Contact us"}
               </a>
@@ -314,14 +319,15 @@ export default function Home() {
             <button
               key={p.id}
               onClick={() => handleSelectPath(p.id)}
-              className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br ${p.color} p-[1px] text-right shadow-lg 
-                transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl`}
+              className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br ${p.color} p-[1px] text-right shadow-lg transition-transform transition-shadow duration-200 hover:-translate-y-1 hover:shadow-2xl`}
             >
               <div className="h-full w-full rounded-[1.35rem] bg-slate-950/90 p-4 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs text-slate-300">
-                      {lang === "ar" ? `مسار ${p.labelAr}` : `${p.labelEn} path`}
+                      {lang === "ar"
+                        ? `مسار ${p.labelAr}`
+                        : `${p.labelEn} path`}
                     </span>
                     <span className="text-[11px] px-2 py-0.5 rounded-full bg-white/10 text-slate-100">
                       {lang === "ar" ? "تشخيص سريع" : "Quick assessment"}
@@ -336,7 +342,9 @@ export default function Home() {
                 </div>
                 <div className="flex items-center justify-between text-[12px] text-emerald-200">
                   <span className="group-hover:translate-x-1 transition">
-                    {lang === "ar" ? "ابدأ هذا المسار" : "Start this path"}
+                    {lang === "ar"
+                      ? "ابدأ هذا المسار"
+                      : "Start this path"}
                   </span>
                   <span className="opacity-80 group-hover:opacity-100">
                     ←
@@ -406,7 +414,9 @@ export default function Home() {
           </p>
           <p>
             © {new Date().getFullYear()}{" "}
-            {lang === "ar" ? "منصّة الأسرة – نموذج أولي" : "Family Platform – MVP"}
+            {lang === "ar"
+              ? "منصّة الأسرة – نموذج أولي"
+              : "Family Platform – MVP"}
           </p>
         </div>
       </footer>
